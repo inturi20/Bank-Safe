@@ -1,18 +1,22 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { CustomerarrayComponent } from './components/customerarray/customerarray.component';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { BankRoutingModule } from "./bank-routing.module";
+import { ReactiveFormsModule } from "@angular/forms";
+import { HttpClientModule } from "@angular/common/http";
+import { CustomerarrayComponent } from "./components/customerarray/customerarray.component";
 
 @NgModule({
   declarations: [
     CustomerarrayComponent,
-    // ...other components
   ],
   imports: [
     CommonModule,
-    // ...other imports (RouterModule, ReactiveFormsModule, etc. as needed)
+    BankRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
   exports: [
-    CustomerarrayComponent // optional but sometimes helps testing visibility
+    CustomerarrayComponent
   ]
 })
-export class BankModule {}
+export class BankModule { }
