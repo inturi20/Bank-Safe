@@ -1,84 +1,98 @@
-/* Navbar container */
+/* =========================
+   Navbar container
+   ========================= */
 .navbar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
-  background-color: #2c3e50;
-  /* Dark background */
-  color: #ecf0f1;
-  /* Light text */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  /* Subtle shadow */
+  padding: 12px 24px;
+  background-color: #263B6A;
+  color: #EEFABD;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(38, 59, 106, 0.25);
 }
 
-/* Navbar list */
+/* =========================
+   Navbar list (single line)
+   ========================= */
 .navbar-list {
   list-style: none;
   display: flex;
-  gap: 20px;
-  /* Space between links */
+  align-items: center;
+  gap: 16px;
   padding: 0;
   margin: 0;
+  width: 100%;
 }
 
-/* Navbar links */
+/* Prevent wrapping */
+.navbar-list li {
+  white-space: nowrap;
+}
+
+/* =========================
+   Navbar links
+   ========================= */
 .nav-link {
   text-decoration: none;
-  color: #ecf0f1;
-  /* Light text color */
+  color: #EEFABD;
   padding: 10px 15px;
-  border-radius: 5px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  font-size: 16px;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
   cursor: pointer;
-  /* Pointer cursor on links */
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
+/* Hover */
 .nav-link:hover {
-  background-color: #2980b9;
-  /* Blue hover effect */
-  color: white;
-  /* White text on hover */
+  background-color: #6984A9;
+  color: #EEFABD;
 }
 
-/* No hover effect on application name */
+/* =========================
+   App name / Dashboard
+   ========================= */
 .app-name {
-  cursor: default;
-  /* No pointer cursor for the app name */
+  font-weight: 700;
+  cursor: pointer;
 }
 
+/* Keep app-name clean on hover */
 .app-name:hover {
-  background-color: inherit;
-  /* No hover background color */
-  color: inherit;
-  /* No hover color change */
+  background-color: transparent;
+  color: #EEFABD;
 }
 
+/* =========================
+   Active link
+   ========================= */
 .nav-link.active {
-  background-color: #3498db;
-  /* Active link color */
-  color: white;
+  background-color: #A0D585;
+  color: #263B6A;
 }
 
-/* Logout button styles (inside <app-logout>) */
+/* =========================
+   Logout placement
+   ========================= */
 app-logout {
   margin-left: auto;
 }
 
-/* Media Query: Responsive for small screens */
+/* =========================
+   Responsive (stack only if needed)
+   ========================= */
 @media (max-width: 768px) {
   .navbar {
-      flex-direction: column;
-      align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
   }
 
   .navbar-list {
-      flex-direction: column;
-      gap: 10px;
+    flex-wrap: wrap;
+    gap: 10px;
   }
 
   app-logout {
-      margin-left: 0;
+    margin-left: 0;
   }
 }

@@ -36,7 +36,6 @@ export class AuthService {
     return localStorage.getItem("role");
   }
 
-
   createUser(user: Customer): Observable<Customer> {
     return this.http.post<Customer>(`${this.loginUrl}/customer/register`, user);
   }

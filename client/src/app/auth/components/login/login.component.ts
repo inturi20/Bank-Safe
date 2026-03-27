@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
                 .pipe(
                     tap((response) => {
                         console.log(response);
-                      localStorage.setItem("token", response['token']);
+                        localStorage.setItem("token", response['token']);
                         localStorage.setItem("role", response['roles']);
                         localStorage.setItem("user_id", response['userId']);
 

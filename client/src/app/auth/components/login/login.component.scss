@@ -1,65 +1,124 @@
-/* CSS for Login Component */
-.login-form {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #fff;
+
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle at top left, #EEFABD, #6984A9);
+  font-family: "Inter", "Segoe UI", sans-serif;
+  background-color: #6984A9;
 }
+
+
+.login-form {
+  width: 100%;
+  max-width: 420px;
+  margin: 80px auto;
+  padding: 35px 30px;
+  border-radius: 16px;
+  background-color: #EEFABD;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 20px 40px rgba(38, 59, 106, 0.25);
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 .login-form label {
   display: block;
-  margin-bottom: 10px;
-  font-weight: bold;
+  margin-bottom: 20px;
+  color: #263B6A;
+  font-size: 14px;
+  font-weight: 600;
 }
+
 
 .login-form input[type="text"],
-.login-form input[type="password"],
-.login-form select {
+.login-form input[type="password"] {
   width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
+  margin-top: 6px;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #6984A9;
+  font-size: 15px;
+  background-color: #ffffff;
+  transition: all 0.25s ease;
 }
+
+
+.login-form input:focus {
+  outline: none;
+  border-color: #A0D585;
+  box-shadow: 0 0 0 4px rgba(160, 213, 133, 0.4);
+}
+
 
 .login-form .error {
-  color: red;
-  margin-top: 5px;
+  margin-top: 6px;
+  font-size: 12.5px;
+  color: #9b1c1c;
+  font-weight: 500;
 }
+
 
 .login-form button[type="submit"] {
-  display: block;
   width: 100%;
-  padding: 10px;
-  margin-top: 20px;
+  margin-top: 25px;
+  padding: 14px;
+  border-radius: 12px;
   border: none;
-  border-radius: 5px;
-  background-color: #4caf50;
-  color: #fff;
+  background: linear-gradient(135deg, #6984A9, #263B6A);
+  color: #EEFABD;
   font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
   cursor: pointer;
+  transition: all 0.25s ease;
 }
+
 
 .login-form button[type="submit"]:hover {
-  background-color: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(38, 59, 106, 0.45);
 }
 
-.login-form .error-message {
-  color: red;
-  margin-top: 10px;
+/* Active */
+.login-form button[type="submit"]:active {
+  transform: translateY(0);
 }
 
+/* =========================
+   Signup link
+   ========================= */
 a.task-list {
   display: block;
-  margin-top: 20px;
+  margin-top: 18px;
   text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: #6984A9;
   text-decoration: none;
-  color: #007bff;
+  transition: color 0.2s ease;
 }
 
 a.task-list:hover {
+  color: #263B6A;
   text-decoration: underline;
 }
 
+.login-form > div.error {
+  margin-top: 15px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background-color: #f8d7da;
+  color: #721c24;
+  font-size: 13px;
+}

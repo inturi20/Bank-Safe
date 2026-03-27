@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --bg-light: #EEFABD;
+  --accent: #A0D585;
+  --primary: #6984A9;
+  --dark: #263B6A;
+  --white: #ffffff;
+}
+*{
+    background-color: #6984A9;
+
+}
+.app-page {
+  min-height: calc(100vh - 64px); /* adjust if navbar height differs */
+  background-color: #EEFABD;
+  padding: 24px;
+}

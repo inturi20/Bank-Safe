@@ -1,4 +1,4 @@
-<div>
+<!-- <div>
   <form [formGroup]="accountForm" (ngSubmit)="onSubmit()" class="form">
     <h2>Update Account</h2>
     <div class="form-group">
@@ -26,6 +26,96 @@
     <button type="submit" class="btn-submit" [disabled]="accountForm.invalid">Update Account</button>
     <a routerLink="/bank" class="task-list" class="task-list">Dashboard</a>
 
+    <div *ngIf="errorMessage" class="error">
+      {{ errorMessage }}
+    </div>
+
+    <div *ngIf="successMessage" class="success">
+      {{ successMessage }}
+    </div>
+  </form>
+</div> -->
+
+<div class="form-container">
+  <form
+    class="form"
+    [formGroup]="accountForm"
+    (ngSubmit)="onSubmit()"
+    novalidate
+  >
+    <!-- Form Title -->
+    <h2>Update Account</h2>
+
+    <!-- Customer -->
+    <div class="form-group">
+      <label for="customer">Customer</label>
+
+      <select id="customer" formControlName="customer">
+        <option value="">Select a customer</option>
+        <option
+          *ngFor="let customer of customers"
+          [ngValue]="customer"
+        >
+          {{ customer.name }}
+        </option>
+      </select>
+
+      <div
+        class="error"
+        *ngIf="
+          accountForm.get('customer')?.invalid &&
+          accountForm.get('customer')?.touched
+        "
+      >
+        <small *ngIf="accountForm.get('customer')?.hasError('required')">
+          Customer is required.
+        </small>
+      </div>
+    </div>
+
+    <!-- Balance -->
+    <div class="form-group">
+      <label for="balance">Balance</label>
+
+      <input
+      
+        type="text"
+        id="balance"
+        formControlName="balance"
+        placeholder="Enter account balance"
+      />
+
+      <div
+        class="error"
+        *ngIf="
+          accountForm.get('balance')?.invalid &&
+          accountForm.get('balance')?.touched
+        "
+      >
+        <small *ngIf="accountForm.get('balance')?.hasError('required')">
+          Balance is required.
+        </small>
+        <small *ngIf="accountForm.get('balance')?.hasError('min')">
+          Balance must be non‑negative.
+        </small>
+      </div>
+    </div>
+
+    <!-- Submit -->
+    <button
+      type="submit"
+      class="btn-submit"
+      [disabled]="accountForm.invalid"
+    >
+      Update Account
+    </button>
+
+    <!-- Navigation -->
+    <a routerLink="/bank" class="task-list">
+      Back to Dashboard
+    </a>
+
+    <!-- Messages -->
     <div *ngIf="errorMessage" class="error">
       {{ errorMessage }}
     </div>
